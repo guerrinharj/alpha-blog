@@ -1,10 +1,21 @@
-<% flash.each do |name, msg| %> 
-    <%= msg %> 
-<% end %>
+<%= render 'layouts/messages' %>
+
 
 <h1> Showing articles details! </h1>
 
 <h2> Title: <%= @article.title %> </h2>
 <h3> Description: <%= @article.description %></h3>
 
-<a href="/articles"> Back to all articles! </a>
+
+
+<br>
+
+<%= link_to 'Edit', edit_article_path(@article) %> 
+
+<br>
+
+<%= link_to 'Delete', article_path(@article), method: :delete, data: { confirm: "are you sure?" } %> 
+
+<br>
+
+<%= link_to 'Back to all articles', articles_path %>  
