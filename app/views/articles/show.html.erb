@@ -1,21 +1,58 @@
 <%= render 'layouts/messages' %>
 
+<div class="container"> 
 
-<h1> Showing articles details! </h1>
-
-<h2> Title: <%= @article.title %> </h2>
-<h3> Description: <%= @article.description %></h3>
+    <div class="articles_list">
 
 
+            <div class="article_title">
+            <h1> Showing articles details! </h1>
+            </div>
 
-<br>
+            <div class="card_list">
 
-<%= link_to 'Edit', edit_article_path(@article) %> 
+                <div class="card">
 
-<br>
+                    <div class="user_section">
+                    <h3> by Gabriel Guerra </h4>
+                    </div>
 
-<%= link_to 'Delete', article_path(@article), method: :delete, data: { confirm: "are you sure?" } %> 
+                    <div class="article_section">
 
-<br>
+                        <h2> Title: <%= @article.title %> </h2>
+                        <h3> Description: <%= @article.description %></h3>
 
-<%= link_to 'Back to all articles', articles_path %>  
+                    </div>
+
+                    <div class="control_section">
+
+                        <div> <%= link_to 'Edit', edit_article_path(@article) %> </div>
+
+                        <div> <%= link_to 'Delete', article_path(@article), method: :delete, data: { confirm: "are you sure?" } %> </div>
+
+                    </div>
+
+                    <div class="hour_section">
+                        <h4>  Created about <%= time_ago_in_words(@article.created_at) %>ago, edited about <%= time_ago_in_words(@article.updated_at) %> ago</h4>
+                    </div>
+
+
+
+            </div>
+
+       
+
+
+
+
+    </div>
+
+        <div class="back">
+            <div> 
+            <%= link_to 'Back', articles_path %> 
+            </div>
+        </div> 
+
+    </div>
+
+</div>

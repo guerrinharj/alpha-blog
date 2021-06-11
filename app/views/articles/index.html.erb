@@ -1,25 +1,60 @@
-<h1> Article listing page</h1>
+<div class="container"> 
 
- <%= link_to 'Create', new_article_path %>  </td>
+    <div class="articles_list">
 
-<table>
-    <thead>
-        <tr> 
-            <th> Title </th>
-            <th> Description </th>
-            <th> Actions </th>
-        </tr>
-    </thead>
-    <tbody>
-    <% @articles.each do |article| %>
-        <tr>
-            <td> <%= article.title %> </td>
-            <td> <%= article.description %> </td>
-            <td> <%= link_to 'Show', article_path(article) %>  </td>
-            <td> <%= link_to 'Edit', edit_article_path(article) %>  </td>
-            <td> <%= link_to 'Delete', article_path(article), method: :delete %>  </td>
-        </tr>
-    <% end %>
-    </tbody>
-</table>
+     
+
+        <div class="article_title">
+            <h1> Listing all articles</h1>
+        </div>
+
+        <div id="create" > <%= link_to 'Create!', new_article_path %>  </div> 
+
+       
+
+            <div class="card_list">
+
+
+                    <% @articles.each do |article| %>
+
+                    <div class="card">
+
+                        <div class="user_section">
+                           <h3> by Gabriel Guerra </h4>
+                         </div>
+
+                        <div class="article_section">
+
+                            <h2> <%= article.title %> </h2>
+                            <h3> <%= article.description %> </h3>
+
+                            <div class="control_section">
+                    
+                               <div> <%= link_to 'View', article_path(article) %>  </div> 
+                               <div> <%= link_to 'Edit', edit_article_path(article) %> </div>
+                               <div> <%= link_to 'Delete', article_path(article), method: :delete %> </div>
+                            </div>
+
+                            <div class="hour_section">
+                                <h4>  Created about <%= time_ago_in_words(article.created_at) %>  ago, edited about <%= time_ago_in_words(article.updated_at) %>  ago</h4>
+                            </div>
+
+                        </div>
+
+   
+
+
+
+
+                    </div>
+
+                           
+                    <% end %>
+
+
+            </div>
+
+    </div>
+
+</div>
 

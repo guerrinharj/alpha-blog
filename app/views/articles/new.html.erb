@@ -1,5 +1,15 @@
-<h1> New Article </h1>
+<div class="container" id="create_container"> 
 
-<%= render 'form' %>
+    <h1> Create a new article </h1>
 
-<a href="/articles"> Back to all articles! </a>
+    <div>
+     <%= render 'form' %>
+    </div>
+
+    <div class="back">
+        <div> 
+        <%= link_to 'Back', articles_path %> 
+        </div>
+     </div>
+
+</div>
