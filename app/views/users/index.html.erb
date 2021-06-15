@@ -1,0 +1,67 @@
+<div class="container"> 
+
+    
+
+    <div class="articles_list">
+
+
+     
+
+        <div class="article_title">
+            <div id="create" > 
+                <div> <%= link_to 'Create!', new_user_path %>  </div>
+            </div> 
+            <h1> Listing all users</h1>
+        </div>
+
+       
+
+       
+
+            <div class="card_list">
+
+
+                    <% @users.each do |user| %>
+
+                    <%= gravatar_for user, size: 150 %>
+
+                    <div class="card">
+
+                        <div class="user_section">
+                           <h3>  <%= user.username if user %> </h3>
+                            
+                         </div>
+
+                        <div class="article_section">
+
+                            <h2> <%= user.email %> </h2>
+                           
+                            <div class="control_section">
+                    
+                                <div> <%= link_to 'View', user_path(user) %> </div>
+                               <div> <%= link_to 'Edit', edit_user_path(user) %> </div>
+                               <div> <%= link_to 'Delete', user_path(user), method: :delete %> </div>
+                            </div>
+
+                            <div class="hour_section">
+                                <h4>  Created about <%= time_ago_in_words(user.created_at) %>  ago, edited about <%= time_ago_in_words(user.updated_at) %>  ago</h4>
+                            </div>
+
+                        </div>
+
+   
+
+
+
+
+                    </div>
+
+                           
+                    <% end %>
+
+
+            </div>
+
+    </div>
+
+</div>

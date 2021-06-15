@@ -27,6 +27,27 @@
 
   a {
       text-decoration: none;
+      color: yellow
+  }
+
+
+  .notice {
+    width: 400px;
+    height: 100px;
+    position: fixed;
+    background-color: black;
+    border: solid 1px yellow;
+    color: yellow;
+    margin: auto;
+    position: fixed;
+    left: 50%;
+    top: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    transform: translateX(-50%);
+    display: none
   }
 
  .header, .footer {
@@ -95,7 +116,7 @@
     justify-content: space-between
 }
 
-input[type="text"] {
+input[type="text"], input[type="email"], input[type="password"] {
     background-color: black;
     box-shadow: none;
     border: solid 1px yellow;
@@ -186,16 +207,27 @@ main {
     transition:all 1s ease;
 }
 
+.jumbotron-text button a {
+    color: yellow
+}
+
 .jumbotron-text button:hover {
     background-position:right bottom;
-    color: black;
     cursor: pointer;
+}
+
+.jumbotron-text button:hover a {
+    color: black
 }
 
 .articles_list {
     text-align: center;
     width: 50%;
     margin: auto;
+}
+
+.articles_list h1 {
+    margin-top: 50px;
 }
 
 .card {
@@ -233,7 +265,7 @@ main {
     margin: 2rem auto;
 }
 
-.control_section div, #create, .create_card input[type="submit"]{
+.control_section div, #create div, .create_card input[type="submit"]{
     border: solid 1px yellow;
     padding: 0.8rem 1rem;
     background: linear-gradient(to right, black 50%, yellow 50%);
@@ -247,16 +279,16 @@ main {
 }
 
 
-.control_section div a, #create a, .back {
+.control_section div a, #create div a, .back {
     color: yellow
 }
 
-.control_section div:hover, #create:hover, .create_card input[type="submit"]:hover, .back div:hover {
+.control_section div:hover, #create div:hover, .create_card input[type="submit"]:hover, .back div:hover {
     background-position:right bottom;
     cursor: pointer;
 }
 
-.control_section div:hover a, #create:hover a, .create_card input[type="submit"]:hover, .back div:hover a {
+.control_section div:hover a, #create div:hover a, .create_card input[type="submit"]:hover, .back div:hover a {
     color: black
 }
 
@@ -270,10 +302,11 @@ main {
      font-style: italic
 }
 
-#create {
-    position: absolute;
-        left: 28%;
-        top: 5%
+#create div {
+    width: 20%;
+    margin: auto;
+
+
 }
 
 .container ul li {
@@ -305,7 +338,7 @@ label {
     width: 80px;
 }
 
-.create_card input[type="text"], textarea {
+.create_card input[type="text"], textarea, input[type="email"], input[type="password"] {
     width: 50vw;
     border: solid 1px yellow;
     background-color: black;
@@ -412,7 +445,7 @@ input:-internal-autofill-selected {
     display: block
 }
 
-    .create_card input[type="text"], textarea {
+    .create_card input[type="text"], textarea, input[type="email"], input[type="password"] {
         margin: 10px 0;
         padding: 20px
     }

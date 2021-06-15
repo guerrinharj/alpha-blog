@@ -1,0 +1,33 @@
+
+  <%= render 'errors' %>
+    
+    <div class="create_card">
+
+
+    <%= form_with(model: @user, local: true) do |f| %>
+
+        <div class="labeldiv"> 
+            <%= f.label :username %>
+            <br>
+            <%= f.text_field :username %>
+        </div>
+
+        <div class="labeldiv">
+            <%= f.label :email %>
+            <br>
+            <%= f.email_field :email %>
+        </div>
+
+        <div class="labeldiv">
+            <%= f.label :password_digest, "Password" %>
+            <br>
+            <%= f.password_field :password_digest %>
+        </div>
+
+        <div class="labeldiv" id="submitdiv">
+            <%= f.submit(@user.new_record? ? "Sign up" : "Update account" ) %>
+        </div>
+
+    <% end %>
+
+    </div>

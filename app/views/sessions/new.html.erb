@@ -1,0 +1,38 @@
+<div class="container" id="create_container"> 
+
+    <h1> Login </h1>
+
+    <div>
+    
+    <div class="create_card">
+
+     <%= form_with(scope: :session, url: login_path, local: true) do |f| %>
+
+        <div class="labeldiv">
+            <%= f.label :email %>
+            <br>
+            <%= f.email_field :email %>
+        </div>
+
+        <div class="labeldiv">
+            <%= f.label :password_digest, "Password" %>
+            <br>
+            <%= f.password_field :password_digest %>
+        </div>
+
+        <div class="labeldiv" id="submitdiv">
+             <%= f.submit "Log in" %>
+        </div>
+
+    <% end %>
+
+    </div>
+    </div>
+
+    <div class="back">
+        <div> 
+        <%= link_to 'Back', root_path %> 
+        </div>
+     </div>
+
+</div>
